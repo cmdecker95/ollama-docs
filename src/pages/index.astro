@@ -1,23 +1,24 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>Ollama Docs 🦙</h1>
-			<p>
-        Ollama's documentation is  <strong>only on GitHub</strong>?! Not anymore!
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>(Unofficial) Ollama Docs 🦙</h1>
+      <p>
+        Ollama's documentation is <strong>only on GitHub</strong>?! Not anymore!
+        Behold, an unofficial parsing of their GitHub docs, using Astro 🚀
+      </p>
+    </main>
+    <Footer />
+  </body>
 </html>
