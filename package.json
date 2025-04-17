@@ -6,13 +6,30 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/mdx": "^4.2.4",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.3.0",
     "@astropub/md": "^1.0.0",
-    "astro": "^5.7.3"
+    "astro": "^5.7.3",
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-organize-imports": "^4.1.0"
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-organize-imports",
+      "prettier-plugin-astro"
+    ],
+    "printWidth": 100,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "arrowParens": "avoid",
+    "endOfLine": "lf",
+    "htmlWhitespaceSensitivity": "ignore"
   }
 }

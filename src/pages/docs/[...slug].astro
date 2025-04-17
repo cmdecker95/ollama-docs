@@ -1,15 +1,14 @@
-
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
 import Doc from '../../layouts/Doc.astro';
-import { markdown } from "@astropub/md"
+import { markdown } from '@astropub/md';
 
 export async function getStaticPaths() {
-	const docs = await getCollection('docs');
-	return docs.map((doc) => ({
-		params: { slug: doc.data.name },
-		props: doc,
-	}));
+  const docs = await getCollection('docs');
+  return docs.map(doc => ({
+    params: { slug: doc.data.name },
+    props: doc,
+  }));
 }
 
 type Props = CollectionEntry<'docs'>;

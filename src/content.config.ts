@@ -1,9 +1,9 @@
-import { glob } from "astro/loaders";
-import { defineCollection, z } from "astro:content";
-import { docsSchema, ollamaDocsLoader } from "./ollama";
+import { glob } from 'astro/loaders';
+import { defineCollection, z } from 'astro:content';
+import { docsSchema, ollamaDocsLoader } from './ollama';
 
 const blog = defineCollection({
-  loader: glob({ base: "./src/content/blog", pattern: "**/*.{md,mdx}" }),
+  loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -15,8 +15,8 @@ const blog = defineCollection({
 
 const docs = defineCollection({
   loader: await ollamaDocsLoader({
-    repo: "ollama/ollama",
-    path: "docs",
+    repo: 'ollama/ollama',
+    path: 'docs',
   }),
   schema: docsSchema,
 });

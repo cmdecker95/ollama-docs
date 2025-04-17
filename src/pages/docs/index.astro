@@ -10,88 +10,88 @@ const docs = await getCollection('docs');
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      main {
+        width: 960px;
+      }
+      ul {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-				gap: 1rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
+        gap: 1rem;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      ul li {
         position: relative;
         border: 2px solid rgba(var(--gray), 50);
         border-radius: 12px;
         padding: 1rem;
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<ul>
-					{
-						docs.map((doc) => (
-							<li>
-								<a href={`/docs/${doc.data.name}/`}>
-									<h4 class="title">{doc.data.name}</h4>
-<span style="position: absolute; inset: 0; z-index: 100"></span>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
+      }
+      ul li * {
+        text-decoration: none;
+        transition: 0.2s ease;
+      }
+      ul li img {
+        margin-bottom: 0.5rem;
+        border-radius: 12px;
+      }
+      ul li a {
+        display: block;
+      }
+      .title {
+        margin: 0;
+        color: rgb(var(--black));
+        line-height: 1;
+      }
+      .date {
+        margin: 0;
+        color: rgb(var(--gray));
+      }
+      ul li a:hover h4,
+      ul li a:hover .date {
+        color: rgb(var(--accent));
+      }
+      ul a:hover img {
+        box-shadow: var(--box-shadow);
+      }
+      @media (max-width: 720px) {
+        ul {
+          gap: 0.5em;
+        }
+        ul li {
+          width: 100%;
+          text-align: center;
+        }
+        ul li:first-child {
+          margin-bottom: 0;
+        }
+        ul li:first-child .title {
+          font-size: 1.563em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section>
+        <ul>
+          {
+            docs.map(doc => (
+              <li>
+                <a href={`/docs/${doc.data.name}/`}>
+                  <h4 class="title">{doc.data.name}</h4>
+                  <span style="position: absolute; inset: 0; z-index: 100" />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </main>
+    <Footer />
+  </body>
 </html>
